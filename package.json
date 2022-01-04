@@ -1,9 +1,9 @@
 {
-  "name": "myapp",
+  "name": "gestionstage_crud",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

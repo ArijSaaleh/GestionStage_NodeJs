@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gestion Stagiaire</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="stylesheets/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">Stage Manegement</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">New Stagiaire</h2>
+            <span class="text-dark">Use the below form to create a new stagiaire</span>
+        </div>
+        <!-- form handling -->
+ <form action="/ajout" method="POST" id="ajout">
+    <div class="new_stagiaire">
+        <div class="form-group">
+            <label for="nom" class="text-dark">Nom</label>
+            <input type="text" name="nom" required value="" placeholder=" nom ici">
+        </div>
+        <div class="form-group">
+            <label for="prenom" class="text-dark">Prenom</label>
+            <input type="text" name="prenom" required value="" placeholder=" prenom ici">
+        </div>
+        <div class="form-group">
+            <label for="cin" class="text-dark">CIN</label>
+            <input type="number" name="cin" size="8" required value="" placeholder=" CIN ici">
+        </div>
+        <div class="form-group">
+            <label for="email" class="text-dark">Email</label>
+            <input type="email" name="email" value="" placeholder="example@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="phone" class="text-dark">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="genre" class="text-dark">Gender</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="genre" value="Male" >
+                <label for="radio-2" class="radio-label">Male</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-3" name="genre" value="Female" >
+                <label for="radio-3" class="radio-label">Female</label>
+            </div>
+        </div>
+        <label >Choose an Option:</label>
+            <select name="option">
+                <option name="NONE" value="NONE">--Please choose an option--</option>
+                <option name="IOSYS" value="IOSYS">IOSYS</option>
+                <option name="SLEAM" value="SLEAM">SLEAM</option>
+                <option name="TWIN" value="TWIN">TWIN</option>
+                <option name="SIM" value="SIM">SIM</option>
+                <option name="GAMIX" value="GAMIX">GAMIX</option>
+                <option name="WIN" value="WIN">WIN</option>
+            </select>
+        <div class="form-group">
+            <button type="button" class="btn btn-success">Save</button>
+        </div>
+
+    </div>
+</form>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="javascripts/scripts.js"></script>
+    </body>
+</html>

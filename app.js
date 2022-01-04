@@ -3,23 +3,20 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const connectDB = require('./database/connection');
 
-var mongoose = require('mongoose');
-var config = require('./database/mongodb.json');
-mongoose.connect(config.mongo.url,{useNewUrlParser: true, useUnifiedTopology: true },
-  ()=> console.log("connected"));
-  
+
 var indexRouter = require('./routes/index');
 var stagiairesRouter = require('./routes/stagiaires');
 
 
 var app = express();
-
+connectDB();
 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'twig');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -27,8 +24,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/stagiaires', stagiairesRouter);
+//app.use('/', indexRouter);
+app.use('/', stagiairesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
